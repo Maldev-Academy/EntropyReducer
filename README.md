@@ -9,7 +9,7 @@
 
 **EntropyReducer** algorithm is determined by [BUFF_SIZE](https://github.com/Maldev-Academy/EntropyReducer/blob/main/EntropyReducer/Common.h#L13) and [NULL_BYTES](https://github.com/Maldev-Academy/EntropyReducer/blob/main/EntropyReducer/Common.h#L14) values. The following is how would **EntropyReducer** organize your payload if `BUFF_SIZE` was set to **4**, and `NULL_BYTES` to **2**.
 
-![image](https://user-images.githubusercontent.com/111295429/222892323-bdb95b7b-b7ea-45b6-99d8-06ee87796571.png)
+![image](https://user-images.githubusercontent.com/111295429/222906172-800d8436-abb4-4c1a-96b6-19a8f0c846cf.png)
 
 <br>
 
