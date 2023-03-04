@@ -92,8 +92,13 @@ In this example, `BUFF_SIZE` was set to **3**, and `NULL_BYTES` to **1**.
 ![image](https://user-images.githubusercontent.com/111295429/222897491-f9217e51-3007-4f1c-a5e4-b8e4c89442c3.png)
 
 
+<br>
 
 
+#### The Merge Sort Algorithm Is Taken From [c-linked-list](https://github.com/Leyxargon/c-linked-list).
+
+
+<!-- add our names if u want hbb idk but delete all the comments -->
 
 
 
