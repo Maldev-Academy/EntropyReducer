@@ -17,10 +17,10 @@
 struct LINKED_LIST;
 typedef struct _LINKED_LIST
 {
-	BYTE					pBuffer	[BUFF_SIZE];	// payload's bytes
-	BYTE					pNull	[NULL_BYTES];	// null padded bytes
-	INT						ID;						// node id
-	struct LINKED_LIST*		Next;					// next node pointer	
+	BYTE			pBuffer	[BUFF_SIZE];	// payload's bytes
+	BYTE			pNull	[NULL_BYTES];	// null padded bytes
+	INT			ID;			// node id
+	struct LINKED_LIST*	Next;			// next node pointer	
 
 }LINKED_LIST, * PLINKED_LIST;
 
