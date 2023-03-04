@@ -34,11 +34,11 @@ VOID PrintList(IN PLINKED_LIST LinkedList) {
 // Serailized node:
 // 
 //----------------------//
-//		BUFF_SIZE		//
+//	BUFF_SIZE	//
 //----------------------//
-//		NULL_BYTES		//
+//	NULL_BYTES	//
 //----------------------//
-//	   ID - 4 BYTES		//	
+//	ID - 4 BYTES	//	
 //----------------------//
 
 
