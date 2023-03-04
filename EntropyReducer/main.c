@@ -101,54 +101,6 @@ BOOL Obfuscate(IN PBYTE PayloadBuffer, IN SIZE_T PayloadSize, OUT PBYTE* Obfusca
 }
 
 
-#ifdef  DEOBFUSCATE
-BOOL Deobfuscate(IN PBYTE pFuscatedBuff, IN SIZE_T sFuscatedSize, OUT PBYTE* ptPayload, OUT PSIZE_T psSize) {
-
-	PLINKED_LIST	pLinkedList = NULL;
-
-	for (size_t i = 0; i < sFuscatedSize; i++) {
-		if (i % SERIALIZED_SIZE == 0)
-			pLinkedList = InsertAtTheEnd(pLinkedList, &pFuscatedBuff[i], *(int*)&pFuscatedBuff[i + BUFF_SIZE + NULL_BYTES]);
-	}
-
-	MergeSort(&pLinkedList, SORT_BY_ID);
-
-//	printf("---------------------------------------------------------------------------------------------\n\n");
-//	PrintList(pLinkedList);
-//	printf("---------------------------------------------------------------------------------------------\n\n");
-
-
-	PLINKED_LIST	pTmpHead	= pLinkedList;
-	SIZE_T			BufferSize	= NULL;
-	PBYTE			BufferBytes = (PBYTE)LocalAlloc(LPTR, BUFF_SIZE);
-	unsigned int	x			= 0x00;
-
-	while (pTmpHead != NULL) {
-
-		BYTE TmpBuffer[BUFF_SIZE] = { 0 };
-
-		memcpy(TmpBuffer, pTmpHead->pBuffer, BUFF_SIZE);
-
-		BufferSize += BUFF_SIZE;
-
-		if (BufferBytes != NULL) {
-			BufferBytes = (PBYTE)LocalReAlloc(BufferBytes, BufferSize, LMEM_MOVEABLE | LMEM_ZEROINIT);
-			memcpy((PVOID)(BufferBytes + (BufferSize - BUFF_SIZE)), TmpBuffer, BUFF_SIZE);
-		}
-
-		pTmpHead = pTmpHead->Next;
-		x++;
-	}
-
-	*ptPayload	= BufferBytes;
-	*psSize		= x * BUFF_SIZE;
-
-	if (*ptPayload != NULL && *psSize < sFuscatedSize)
-		return 1;
-	else
-		return 0;
-}
-#endif //  DEOBFUSCATE
 
 
 
