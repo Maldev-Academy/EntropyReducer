@@ -17,10 +17,10 @@ BOOL ReportError(const char* ApiName) {
 // read file from disk 
 BOOL ReadPayloadFile(IN PCSTR cFileInput, OUT PBYTE* pPayloadData, OUT PSIZE_T sPayloadSize)
 {
-	HANDLE	hFile					= INVALID_HANDLE_VALUE;
-	DWORD	dwFileSize				= NULL;
+	HANDLE	hFile				= INVALID_HANDLE_VALUE;
+	DWORD	dwFileSize			= NULL;
 	DWORD	dwNumberOfBytesRead		= NULL;
-	PBYTE	pBuffer					= NULL;
+	PBYTE	pBuffer				= NULL;
 
 
 	hFile = CreateFileA(cFileInput, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
@@ -56,10 +56,10 @@ BOOL ReadPayloadFile(IN PCSTR cFileInput, OUT PBYTE* pPayloadData, OUT PSIZE_T s
 // write file to disk
 BOOL WritePayloadFile(IN PSTR cFileInput, IN LPCVOID pPayloadData, IN SIZE_T Size)
 {
-	HANDLE	hFile					= INVALID_HANDLE_VALUE;
-	DWORD	dwNumberOfBytesWritten	= NULL;
+	HANDLE	hFile				= INVALID_HANDLE_VALUE;
+	DWORD	dwNumberOfBytesWritten		= NULL;
 	// constructing the output file name
-	CHAR*	cFileName				= (CHAR*)malloc(strlen(cFileInput) + sizeof(PREFIX) + 1);
+	CHAR*	cFileName			= (CHAR*)malloc(strlen(cFileInput) + sizeof(PREFIX) + 1);
 	wsprintfA(cFileName, "%s%s", cFileInput, PREFIX);
 
 
