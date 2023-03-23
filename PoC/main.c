@@ -14,8 +14,6 @@ BOOL ReportError(const char* ApiName) {
 	return FALSE;
 }
 
-//\
-#define DENUG_FILE "C:\\Users\\area51m\\source\\repos\\EntropyReducer\\x64\\Release\\demon.bin.ER"
 
 int main(int argc, char* argv[]) {
 
